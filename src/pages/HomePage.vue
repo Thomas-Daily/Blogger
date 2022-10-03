@@ -22,10 +22,9 @@
       <PostForm />
     </div>
   </div>
-  <button @click="changePage(previousPage)" :disabled="!previousPage" class="btn btn-danger me-2"
+  <button @click="changePage(previousPage)" class="btn btn-danger me-2"
     :class="{'disabled' : !previousPage}">Previous</button>
-  <button @click="changePage(nextPage)" :disabled="!nextPage"
-    :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
+  <button @click="changePage(nextPage)" :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
 </template>
 
 <script>

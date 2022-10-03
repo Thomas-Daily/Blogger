@@ -4,6 +4,8 @@ export class Post {
     this.imgURL = data.imgUrl
     this.userPic = data.creator.picture
     this.userName = data.creator.name
+    this.createdAt = data.createdAt
+    this.likes = 0
   }
 
 }

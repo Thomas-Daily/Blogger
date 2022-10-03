@@ -17,6 +17,8 @@
       <!-- <img :src="post.creator?.picture" alt=""> -->
       <img v-if="post.imgURL" class="img-fluid" :src="post.imgURL" alt="post pic">
       <h5>{{post.body}}</h5>
+      <h6>{{post.createdAt}}</h6>
+      <h3>Likes: {{post.likes}}</h3>
     </div>
   </div>
 
