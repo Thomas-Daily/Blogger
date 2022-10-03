@@ -3,6 +3,8 @@
     <div class="col-12">
       <div class="row justify-content-space m-2">
         <div class="col-2">
+          <!--  <router-link class="navbar-brand d-flex" :to="{ name: 'Profile', params: {id: poster.id} }">
+          </router-link>-->
           <img :src="post.userPic" alt="IDK" class="userPic">
         </div>
         <div class="col-6">
