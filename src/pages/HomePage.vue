@@ -22,9 +22,8 @@
       <PostForm />
     </div>
   </div>
-  <button @click="changePage(previousPage)" class="btn btn-danger me-2"
-    :class="{'disabled' : !previousPage}">Previous</button>
-  <button @click="changePage(nextPage)" :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
+  <button @click="changePage(older)" class="btn btn-danger me-2">Previous</button>
+  <button @click="changePage(newer)" :class="`btn btn-danger ${!nextPage ? 'btn-info' : ''}`">Next</button>
 </template>
 
 <script>
@@ -54,12 +53,12 @@ export default {
     return {
       posts: computed(() => AppState.posts),
       account: computed(() => AppState.account),
-      nextPage: computed(() => AppState.nextPage),
-      previousPage: computed(() => AppState.previousPage),
+      older: computed(() => AppState.nextPage),
+      newer: computed(() => AppState.previousPage),
 
-      async changePage(pageUrl) {
+      async changePage(page) {
         try {
-          await postsService.getPosts(pageUrl)
+          await postsService.getPosts(page)
         } catch (error) {
           Pop.error(error.message)
         }
