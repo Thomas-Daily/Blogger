@@ -40,6 +40,9 @@
     </div>
   </div>
 
+  <Posts v-if="posts" v-for="p in posts" :post="p" />
+
+
 </template>
 
 <script>
@@ -52,10 +55,23 @@ import { Post } from '../models/Post';
 export default {
 
   setup() {
+
+    // onMounted(async () => {
+    //   try {
+    //     await postsService.getPosts()
+    //   } catch (error) {
+    //     logger.error(error)
+    //     Pop.toast(error.message, "error")
+    //   }
+
     return {
       account: computed(() => AppState.account)
     };
+
+
+
   },
+
   components: { AccountForm, Posts }
 }
 </script>
